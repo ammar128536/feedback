@@ -43,6 +43,7 @@ export async function DELETE(req: Request) {
     })
     return NextResponse.json(deleted)
   } catch (error) {
+    console.log(error)
     return NextResponse.json({ error: 'Failed to delete feedback' }, { status: 500 })
   }
 }
@@ -60,6 +61,7 @@ export async function PATCH(req: Request) {
     });
     return NextResponse.json(updated);
   } catch (error) {
+    console.log(error)
     return NextResponse.json({ error: 'Failed to update feedback' }, { status: 500 });
   }
 }
