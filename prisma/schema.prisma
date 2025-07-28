@@ -1,0 +1,16 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb" // or "postgresql" if you're using Postgres
+  url      = env("DATABASE_URL")
+}
+
+model Feedback {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  message   String
+  createdAt DateTime @default(now())
+}
